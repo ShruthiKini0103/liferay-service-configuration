@@ -1,4 +1,5 @@
 If you are caught with some exceptions, please re-check few of the checkpoints and start your Liferay Tomcat again.
+
 1. connector driver error
 In the first line of portal-ext.properties, on this line few times you provide it like this: jdbc.default.driverClassName=com.mysql.jdbc.Driver or jdbc.default.driverClassName=com.mysql.cj.jdbc.Driver [Reason is]
 
@@ -11,6 +12,6 @@ to
 
 Class.forName("com.mysql.cj.jdbc.Driver");
 
-To summarise it depends on the mysql version you are using for the setup.
+To summarise driver class depends on the MySql version you have used for this setup.
 
 2. You haven't removed the cache before restarting the Liferay bundle specified in the step 10101010101010101010.
