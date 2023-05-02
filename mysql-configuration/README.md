@@ -63,6 +63,6 @@ Purpose of removing these files is to **remove the cache**.
 
 11. Sign-up credentials gets stored in **portal-setup-wizard.properties** on Liferay Home when you downgrade the Liferay bundle.
 
-12. **Restart the Tomcat server** and check for the logs, you should now see the **mysql database** being accessed and **portal-ext.properties** that you added in before restarting the Liferay.
+12. **Restart the Tomcat server** and check for the logs, you should now see the **mysql database** being accessed and **portal-ext.properties** that you created before restarting the Liferay.
 
 13. Congratulations! you have now **configured Liferay with MySql database**.
