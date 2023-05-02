@@ -22,24 +22,26 @@ docker run -d --name elasticsearch -p 9200:9200 -e "discovery.type=single-node" 
 ```
 Check [compatability metrix](https://www.liferay.com/compatibility-matrix) to see support for the specific Liferay bundle downloaded.
 
-6. Create the following Elasticsearch configuration file.
+6. Sign-up credentials gets stored in **portal-setup-wizard.properties** on Liferay Home when you downgrade the Liferay bundle.
+
+7. Create the following Elasticsearch configuration file.
 ```
 com.liferay.portal.search.elasticsearch7.configuration.ElasticsearchConfiguration.config
 ```
 
-5. Specify the configuration properties in the **.config** file created in the previous step. This step enables remote operation mode.
+8. Specify the configuration properties in the **.config** file created in the previous step. This step enables remote operation mode.
 ```
 networkHostAddresses=["http://localhost:9200"]
 productionModeEnabled=B"true"
 ```
 
-6. Place the **.config** file in your **[Liferay Home]/osgi/configs** folder.
+9. Place the **.config** file in your **[Liferay Home]/osgi/configs** folder.
 
-7. Instead of **step 5 and step 6**, you can also set up configurations in the user interface. In the Global menu, go to **Control Panel --> System Settings --> Open Search category--> type Elasticsearch 7**. You can check/update following configurations:
+10. Instead of **step 5 and step 6**, you can also set up configurations in the user interface. In the Global menu, go to **Control Panel --> System Settings --> Open Search category--> type Elasticsearch 7**. You can check/update following configurations:
 - Operation Mode - Remote
 - Network Host Addresses - http://localhost:9200 [ip address of your elasticsearch docker container]
 - Production Mode Enabled - True
 - Cluster Name - Shruthi-Elastic-Search-Cluster [cluster name of your choice provided in elasticsearch.yml file]
 
-8. Congratulations! you have now **configured Liferay with Remote Elastic Search**. To check for elasticsearch health status, navigate to **Control Panel --> Search --> Connections**.
+11. Congratulations! you have now **configured Liferay with Remote Elastic Search**. To check for elasticsearch health status, navigate to **Control Panel --> Search --> Connections**.
 ![elastic-search-health-status](./es.png) 
