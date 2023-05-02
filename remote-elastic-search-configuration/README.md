@@ -34,11 +34,11 @@ productionModeEnabled=B"true"
 
 6. Place the **.config** file in your **[Liferay Home]/osgi/configs** folder.
 
-7. Instead of **step 5 and step 6**, you can also set up configurations in the user interface. In the Global menu, go to --**Control Panel --> System Settings --> Open Search category--> type Elasticsearch 7**--. You can check/update following configurations:
+7. Instead of **step 5 and step 6**, you can also set up configurations in the user interface. In the Global menu, go to **Control Panel --> System Settings --> Open Search category--> type Elasticsearch 7**. You can check/update following configurations:
 - Operation Mode - Remote
 - Network Host Addresses - http://localhost:9200 [ip address of your elasticsearch docker container]
 - Production Mode Enabled - True
 - Cluster Name - Shruthi-Elastic-Search-Cluster [cluster name of your choice provided in elasticsearch.yml file]
 
-8. Congratulations! you have now **configured Liferay with Remote Elastic Search**.
+8. Congratulations! you have now **configured Liferay with Remote Elastic Search**. To check for elasticsearch health status, navigate to **Control Panel --> Search --> Connections**.
 ![elastic-search-health-status](./es.png) 
