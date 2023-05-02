@@ -1,6 +1,6 @@
 1. Download a **Liferay bundle** locally and unzip the bundle.
 
-2. Navigate to Liferay home. Start Tomcat server with ./catalina.sh run, the path you need to navigate looks similar to this path but depends on where you have unzip Liferay bundle initially. 
+2. Navigate to Liferay home. Start Tomcat server with ./catalina.sh run, the path you need to navigate to start the server looks similar to this path but depends on where you have unzip Liferay bundle initially. 
 ```
 /home/me/Documents/liferay-dxp-7.4.13.u70/tomcat-9.0.71/bin 
 ```
@@ -11,7 +11,7 @@
 ```
 http://localhost:8080/c/portal/license_activation 
 ```
-Download **developer key**. You need to add this activation key in the deploy folder of Liferay home. As soon as you add the **Activation key**, the logs reflect the messages: 
+Download **developer key**. You need to add this activation key in the **deploy** folder of Liferay home. As soon as you add the **Activation key**, the logs reflect the messages: 
 - **Processing activation-key**
 - **DXP Development license validation passed**
 - **License registered for DXP Development**
@@ -20,7 +20,7 @@ Download **developer key**. You need to add this activation key in the deploy fo
 ```
 docker run -d -p 3306:3306 --name mysql-practise -e MYSQL_ROOT_PASSWORD=root mysql:5.7. 
 ```
-Check compatability metrix to see support for the specific Liferay bundle downloaded.
+Check [compatability metrix](https://www.liferay.com/compatibility-matrix) to see support for the specific Liferay bundle downloaded.
 
 6. Navigate into the Mysql container using command.
 ```
