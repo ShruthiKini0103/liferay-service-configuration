@@ -5,7 +5,7 @@
 /home/me/Documents/liferay-dxp-7.4.13.u70/tomcat-9.0.71/bin 
 ```
 
-3. As soon as your Tomcat server starts , you will be redirected to the **localhost** on your default browser, you can update the basic configurations and **save** it. You get an warning **This instance is not registered**, that means you need to add an **Activation key**..
+3. As soon as your Tomcat server starts , you will be redirected to the **localhost** on your default browser, you can update the basic configurations and **save** it. You get an warning **This instance is not registered**, that means you need to add an **Activation key**.
 
 4. You need to add an **Activation key** for the liferay instance to run successfully. You can download it from here: 
 ```
@@ -16,7 +16,7 @@ Download **developer key**. You need to add this activation key in the deploy fo
 - **DXP Development license validation passed**
 - **License registered for DXP Development**
 
-5. For my practise, I have spinned up a **mysql:5.7** docker container for the configuration setup using command: 
+5. For my practise, I have spinned up a **mysql:5.7** docker container and have set itup using command: 
 ```
 docker run -d -p 3306:3306 --name mysql-practise -e MYSQL_ROOT_PASSWORD=root mysql:5.7. 
 ```
