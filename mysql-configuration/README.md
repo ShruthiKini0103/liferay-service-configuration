@@ -26,23 +26,35 @@ Check [compatability metrix](https://www.liferay.com/compatibility-matrix) to se
 ```
 docker exec -ti <container-id> /bin/bash 
 ```
-Get inside mysql with the command.
+7. Get inside mysql container using command.
 ```
 mysql -uroot -proot 
 ```
 where '-u' represents username and 'p' represents password, you will need to add this details you specified at the time of spinning the container.
 
-7. Note down the **ip address of mysql container** with the help of the following command as this is required for future setup.
+8. Once you are inside the MySql container, create a database using the command.
+```
+create database liferay-integ character set utf8;
+
+```
+
+9. You can check for the database created using the command.
+```
+show databases;
+```
+
+10. Note down the **ip address of mysql container** with the help of the following command as this is required for future setup.
 ```
 docker inspect <container-id>.
 ```
-8. Now that your mysql setup is done for now. You will need to copy the mysql connector jar file to this path: 
+
+11. Now that your mysql setup is done for now. You will need to copy the mysql connector jar file to this path: 
 ```
 liferay-dxp-7.4.13.u70/tomcat-9.0.71/webapps/ROOT/WEB-INF/shielded-container-lib/
 ```
 Important point to note hear is that the **connector jar** file you just moved, should be relevant to the **mysql version** you have spinned for your docker container 
 
-9. Navigate to Liferay home, create a file named **portal-ext.properties**, this file will hold the configurations required to connect MySql running inside the docker container with the Liferay. Files content looks similar to this with few edits required.
+12. Navigate to Liferay home, create a file named **portal-ext.properties**, this file will hold the configurations required to connect MySql running inside the docker container with the Liferay. Files content looks similar to this with few edits required.
 ```
 jdbc.default.driverClassName=com.mysql.jdbc.Driver
 jdbc.default.url=jdbc:mysql://172.17.0.2:3306/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
@@ -54,15 +66,15 @@ Note:
 a. For **jdbc.default.url**, you need to change the **ip address** that you noted down in the step 7, change database name **lportal** with the one you specified while creating the mysql database.
 b. Change the **password** and **username** with the one you specified while spinning up the mysql container.
 
-10. Downgrade **Liferay** at this point and you should now navigate to Liferay home and make sure you removed 3 files:
+13. Downgrade **Liferay** at this point and you should now navigate to Liferay home and make sure you removed 3 files:
 - /osgi/state
 - /tomcat/temp
 - /tomcat/work
 
 Purpose of removing these files is to **remove the cache**.
 
-11. Sign-up credentials gets stored in **portal-setup-wizard.properties** on Liferay Home when you downgrade the Liferay bundle.
+14. Sign-up credentials gets stored in **portal-setup-wizard.properties** on Liferay Home when you downgrade the Liferay bundle.
 
-12. **Restart the Tomcat server** and check for the logs, you should now see the **mysql database** being accessed and **portal-ext.properties** that you created before restarting the Liferay.
+15. **Restart the Tomcat server** and check for the logs, you should now see the **mysql database** being accessed and **portal-ext.properties** that you created before restarting the Liferay.
 
-13. Congratulations! you have now **configured Liferay with MySql database**.
+16. Congratulations! you have now **configured Liferay with MySql database**.
