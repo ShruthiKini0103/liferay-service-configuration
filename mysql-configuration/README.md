@@ -34,7 +34,7 @@ where '-u' represents username and 'p' represents password, you will need to add
 
 8. Once you are inside the MySql container, create a database using the command.
 ```
-create database liferay-integ character set utf8;
+create database liferayinteg character set utf8;
 
 ```
 
