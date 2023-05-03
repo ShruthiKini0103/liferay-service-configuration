@@ -48,7 +48,7 @@ show databases;
 docker inspect <container-id>.
 ```
 
-11. Now that your mysql setup is done for now. You will need to copy the mysql connector jar file to this path: 
+11. Now that your mysql setup is done for now, you will need to copy the mysql connector jar file to this path: 
 ```
 liferay-dxp-7.4.13.u70/tomcat-9.0.71/webapps/ROOT/WEB-INF/shielded-container-lib/
 ```
