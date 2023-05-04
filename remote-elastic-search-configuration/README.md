@@ -43,5 +43,5 @@ productionModeEnabled=B"true"
 - Production Mode Enabled - True
 - Cluster Name - Shruthi-Elastic-Search-Cluster [cluster name of your choice provided in elasticsearch.yml file]
 
-11. Congratulations! you have now **configured Liferay with Remote Elastic Search**. To check for elasticsearch health status, navigate to **Control Panel --> Search --> Connections**.
+11. Congratulations! you have now **configured Liferay with Remote Elastic Search**. To check for elasticsearch health status, navigate to **Global menu --> Control Panel --> Search --> Connections**.
 ![elastic-search-health-status](./es.png) 
