@@ -5,7 +5,7 @@
 /home/me/Documents/liferay-dxp-7.4.13.u70/tomcat-9.0.71/bin 
 ```
 
-3. As soon as your Tomcat server starts , you will be redirected to the **localhost** on your default browser, you can update the basic configurations and **save** it. You get an warning **This instance is not registered**, that means you need to add an **Activation key**.
+3. As soon as your Tomcat server starts , you will be redirected to the **localhost** on your default browser, you can update the basic configurations and **save** it. You get an warning **'This instance is not registered'**, that means you need to add an **Activation key**.
 
 4. You need to add an **Activation key** for the liferay instance to run successfully. You can download it from here: 
 ```
