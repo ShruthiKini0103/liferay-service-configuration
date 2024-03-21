@@ -16,7 +16,7 @@ pipeline {
         stage ('Deploy to Cloud') {
             steps {
                 script {
-                    def script = load 'automation/jobs/lxc-modl-deployment/deployBuilds.groovy'
+                    def script = load 'deployBuilds.groovy'
                     script.deployBuilds()
                 }
             }
