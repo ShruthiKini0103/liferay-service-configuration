@@ -5,7 +5,7 @@ pipeline {
         }
     }
     triggers {
-        cron('45 3 * * 5')
+        githubPush()
     }
     stages {
         stage ('Checkout SCM') {
