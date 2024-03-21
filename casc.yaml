@@ -36,7 +36,7 @@ credentials:
 unclassified:
   slackNotifier:
     botUser: false
-    room: "#testing-asif-jenkins"
+    room: "#myroom"
     sendAsText: false
     teamDomain: "liferay"
     tokenCredentialId: "slack-channel-token"
@@ -54,7 +54,7 @@ jobs:
         description('My first multipipeline job')
         factory {
           workflowBranchProjectFactory {
-            scriptPath('jobs/lxc-modl-deployment/Jenkinsfile')
+            scriptPath('Jenkinsfile')
           }
         }
         branchSources {
@@ -64,7 +64,7 @@ jobs:
             scanCredentialsId('github')
             includes('main')
             repoOwner('ShruthiKini0103')
-            repository('local-modldeployment-test')
+            repository('liferay-service-configuration')
           }
         }
       }
