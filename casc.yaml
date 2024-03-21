@@ -1,0 +1,70 @@
+jenkins:
+  systemMessage: "Welcome to my Jenkins Instance"
+  numExecutors: 2
+  scmCheckoutRetryCount: 0
+  mode: NORMAL
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: ${JENKINS_ADMIN_ID}
+          password: ${JENKINS_ADMIN_PASSWORD}
+  authorizationStrategy:
+    globalMatrix:
+      permissions:
+        - "USER:Job/Discover:anonymous"
+        - "USER:Overall/Administer:admin"
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+        - usernamePassword:
+            scope: GLOBAL
+            id: "github"
+            username: ${GITHUB_USERNAME}
+            password: ${GITHUB_PAT}
+        - string:
+            scope: GLOBAL
+            id: "github-server"
+            secret: ${GITHUB_PAT}
+            description: "Github Server PAT"
+        - string:
+            scope: GLOBAL
+            id: "slack-channel-token"
+            secret: ${SLACK_CHANNEL_TOKEN}
+            description: "Channel token used for Slack Notifications"
+unclassified:
+  slackNotifier:
+    botUser: false
+    room: "#testing-asif-jenkins"
+    sendAsText: false
+    teamDomain: "liferay"
+    tokenCredentialId: "slack-channel-token"
+  githubpluginconfig:
+    configs:
+      - name: "github-plugin-config"
+        apiUrl: "https://api.github.com"
+        credentialsId: "github-server"
+        manageHooks: false
+  location:
+    url: "http://localhost:8080/jenkins"
+jobs:
+  - script: >
+      multibranchPipelineJob('testingmodldeployment') {
+        description('My first multipipeline job')
+        factory {
+          workflowBranchProjectFactory {
+            scriptPath('jobs/lxc-modl-deployment/Jenkinsfile')
+          }
+        }
+        branchSources {
+          github {
+            id('345873655')
+            apiUri('https://api.github.com')
+            scanCredentialsId('github')
+            includes('main')
+            repoOwner('ShruthiKini0103')
+            repository('local-modldeployment-test')
+          }
+        }
+      }
